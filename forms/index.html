@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Angular JS Workshop - Form demo</title>
+        <link rel="stylesheet" href="../style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+        <script src="SignupCtrl.js"></script>
+    </head>
+    <body ng-controller="SignupCtrl">
+        <h1>Sign Up Form</h1>
+        <form name="signupForm" ng-submit="signup(signupForm)">
+            <ol>
+                <li>
+                    Name: <input name="userName" type="text" ng-model="userName" required="required">
+                </li>
+                <li>
+                    Phone: <input name="userPhone" type="text" ng-model="userPhone">
+                </li>
+                <li>
+                    Email: <input name="userEmail" type="email" ng-model="userEmail">
+                </li>
+            </ol>
+            <input type="submit" value="Submit" ng-disabled="signupForm.$invalid">
+        </form>
+    </body>
+</html>

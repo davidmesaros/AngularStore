@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="shoppingList">
+    <head>
+        <title>Angular JS Workshop - Routing demo</title>
+        <link rel="stylesheet" href="../style.css">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.2.18/angular-route.js"></script>
+        <script src="Module.js"></script>
+        <script src="ItemsCtrl.js"></script>
+        <script src="SignupCtrl.js"></script>
+        <script src="RouteConfig.js"></script>
+    </head>
+    <body>
+        <script type="text/ng-templete" id= >
+            <h1>Sign Up Form</h1>
+            <form name="signupForm" ng-submit="signup(signupForm)">
+                <ol>
+                    <li>
+                        Name: <input name="userName" type="text" ng-model="userName" ng-required="true">
+                    </li>
+                    <li>
+                        Phone: <input name="userPhone" type="text" ng-model="userPhone" ng-maxlength="10">
+                    </li>
+                    <li>
+                        Email: <input name="userEmail" type="text" ng-model="userEmail" ng-maxlength="255">
+                    </li>
+                </ol>
+                <input type="submit" value="Submit" ng-disabled="signupForm.$invalid">
+            </form>
+        </div>
+        <div>
+            <h1>Add items to the list</h1>
+            <form ng-submit="addItem()">
+                <input type="text" ng-model="itemText">
+                <select ng-model="itemType" ng-options="type.name for type in types">
+                    <option value="">-- Isle --</option>
+                </select>
+                <input type="submit" value="+">
+            </form>
+            <ol>
+                <li ng-repeat="item in items track by $index">
+                    <span class="name">{{item.item}}</span>
+                    <span class="isle" ng-class="'isle-' + item.type.label">{{item.type.name}}</span>
+                    <input class="del" type="button" value="x" ng-click="removeItem($index)">
+                </li>
+            </ol>
+        </script>
+
+        <a href="#/singup">Sign Up</a>
+        <a href="#/items">My List</a>
+
+        <div ng-view></div>
+    </body>
+</html>

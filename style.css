@@ -1,0 +1,67 @@
+body {
+    background-color: #fff8e5;
+    color: #302212;
+    font-family: Trebuchet MS, sans-serif;
+    padding: 20px;
+}
+
+ol, ul, p {
+    padding: 0;
+    width: 250px;
+}
+
+li {
+    border-bottom: 1px dashed lightgray;
+    list-style: inside decimal;
+    padding: 7px 0 3px;
+    position: relative;
+}
+
+li input[type='text'], li input[type='email'] {
+    float: right;
+}
+
+span.isle {
+    color: white;
+    float: right;
+    font-size: 0.9em;
+    padding: 2px;
+}
+
+span.isle-fv {
+    background-color: green;
+}
+
+span.isle-bakery {
+    background-color: orange;
+}
+
+span.isle-grocery {
+    background-color: brown;
+}
+
+span.isle-frozen {
+    background-color: blue;
+}
+
+span.isle-deli {
+    background-color: pink;
+}
+
+.del {
+    position: absolute;
+    right: -32px;
+}
+
+input.ng-dirty.ng-invalid {
+    background: #ffe5e5;
+    border: 1px solid #ffe5e5;
+}
+
+input.ng-dirty.ng-invalid:focus {
+    outline: 1px solid #9b0000;
+}
+
+p.user {
+    border-bottom: 1px solid lightgray;
+}

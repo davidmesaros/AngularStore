@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Angular JS Workshop - Basic controller demo</title>
+        <link rel="stylesheet" href="../style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+        <script src="ItemsCtrl.js"></script>
+    </head>
+    <body ng-controller="ItemsCtrl">
+        <h1>Add items to the list</h1>
+        <form ng-submit="addItem()">
+            <input type="text" ng-model="itemText">
+            <select ng-model="itemType" ng-options="type.name for type in types">
+                <option value="">-- Isle --</option>
+            </select>
+            <input type="submit" value="+">
+        </form>
+        <ol>
+            <li ng-repeat="item in items track by $index">
+                <span class="name">{{item.item}}</span>
+                <span class="isle" ng-class=" 'isle-' + item.type.label">{{item.type.name}}</span>
+                <input class="del" type="button" value="x" ng-click="removeItem($index)">
+            </li>
+        </ol>
+    </body>
+</html>

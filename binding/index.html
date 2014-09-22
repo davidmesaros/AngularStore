@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Angular JS Workshop - Basic 2 way binding demo</title>
+        <link rel="stylesheet" href="../style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    </head>
+    <body>
+        <h1>OMG it appears instantly!!</h1>
+        <input ng-model="helloworld"type="text"><!--where to see the imput create a scope-->
+        <p ng-bind="helloworld">I wanna see my input here.</p> <!--one way-->
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Angular JS Workshop - Basic controller demo</title>
+        <link rel="stylesheet" href="../style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+        <script src="ItemsCtrl.js"></script>
+    </head>
+    <body ng-controller="Itemsctrl">
+        <h1>Add items to the list</h1>
+        <form ng-submit="addItem()" action=''>
+            <input type="text" ng-model="itemText">
+            <input type="submit" value="+">
+        </form>
+        <ol>
+            <li ng-repeat="item in items track by $index">{{item}}</li>
+        </ol>
+    </body>
+</html>
